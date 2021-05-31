@@ -1,0 +1,121 @@
+<html>
+  <body>
+    <p>Chaque case incorrècte enlève un point de votre réponse</p>
+          <p>INDICE: ROSALIE AIME BIEN SES ÉLÈVES, MARIEN VEND DES LÉGUMES et JEAN A HORREUR DES FLEURS</p>
+    <style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+    <h2 id="tableau">Défi Logique</h2>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Boulanger</th>
+          <th>Fleuriste</th>
+          <th>Maitresse</th>
+          <th>Marchand</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Rosalie</th>
+          <th><input name = cb1 type="checkbox" value="A" /></th>
+          <th><input name = cb1 type="checkbox" value="B" /></th>
+          <th><input name = cb1 type="checkbox" value="C" /></th>
+          <th><input name = cb1 type="checkbox" value="D" /></th>
+        </tr>
+        <tr>
+          <th>Jean</th>
+          <th><input name = cb2 type="checkbox" value="A" /></th>
+          <th><input name = cb2 type="checkbox" value="B" /></th>
+          <th><input name = cb2 type="checkbox" value="C" /></th>
+          <th><input name = cb2 type="checkbox" value="D" /></th>
+        </tr>
+        <tr>
+          <th>Paul</th>
+          <th><input name = cb3 type="checkbox" value="A" /></th>
+          <th><input name = cb3 type="checkbox" value="B" /></th>
+          <th><input name = cb3 type="checkbox" value="C" /></th>
+          <th><input name = cb3 type="checkbox" value="D" /></th>
+        </tr>
+        <tr>
+          <th>Marine</th>
+          <th><input name = cb4 type="checkbox" value="A" /></th>
+          <th><input name = cb4 type="checkbox" value="B" /></th>
+          <th><input name = cb4 type="checkbox" value="C" /></th>
+          <th><input name = cb4 type="checkbox" value="D" /></th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <input type=button value=soumettre onclick=test() id=sus>
+    <br><br>
+    <p id="demo"></p>
+    <script>
+    function test(){
+    var rosalie = document.getElementsByName("cb1");
+    var jean = document.getElementsByName("cb2");
+    var paul = document.getElementsByName("cb3");
+    var marine = document.getElementsByName("cb4");
+    
+    var score = 0.0
+
+      if (rosalie[2].checked) {
+
+      score = score + 1
+
+      } else if(rosalie[0].checked) { 
+        score = score - 1
+      }else if(rosalie[1].checked) { 
+          score = score - 1
+      }else if(rosalie[3].checked) { 
+         score = score - 1
+      }
+
+      if (jean[1].checked) {
+
+      score = score + 1
+
+      } else if (jean[0].checked){
+         score = score - 1
+      }else if (jean[2].checked){
+          score = score - 1
+      }else if (jean[3].checked){
+          score = score - 1
+      }
+
+      if (paul[0].checked) {
+
+      score = score + 1
+
+      }else if (paul[1].checked){
+          score = score - 1
+      }else if (paul[2].checked){
+         score = score - 1
+      }else if (paul[3].checked){
+          score = score - 1
+      }
+      
+      if (marine[3].checked) {
+
+      score = score + 1
+
+      }else if (marine[0].checked){
+        score = 0
+      }else if (marine[1].checked){
+        score = 0
+      }else if (marine[2].checked){
+        score = 0
+      }
+    
+     document.getElementById("demo").innerHTML = "SCORE: "+ score+"  / 4" + "   VRAIE RÉPONSE: Rosalie = Maîtresse, Paul = Fleuriste, Jean = Boulanger, Marine = Marchand"
+    }
+    </script>
+  </body>
+</html>
