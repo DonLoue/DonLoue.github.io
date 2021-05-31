@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  CAISSE ULTIME
+  </head>
+  <body>
+      <br><br><br>
+      <label for="number">Entrez votre prix: (XX.XX)$ </label>
+      <input id="number" name="nombre" type="number" placeholder="1.00" step="0.01"/>
+      
+      
+      <br><br>
+      
+      
+      <label for="name">Entrez le nom de l'item </label>
+      <input id="name" name="mot" type="text"/>
+      
+      <br><br>
+      
+      <input id=submit type=button onclick=caisse() value=Soumettre>
+      
+      <br><br>
+      <p>************</p>
+      <p id=sus> </p>
+      <p>************</p>
+      <p id=sus2></p>
+      <p id=sus3></p>
+      <p id=sus4></p>
+      <p id=sus5></p>
+      <p id=sus6></p>
+      
+      
+      
+
+
+      <!-- document.getElementById("demo").innerHTML = "SCORE: " + score + " / 3" -->
+
+    <script>
+    function caisse() {
+    
+  var prixItem, total, prixLivraison = 0 ; //variables qu'il faudra montré dans le reçu
+	var whatItem = String ; // nom de l'Item
+	const taxes = 113/100 // taxes = constant
+    
+    
+    var whatItem = document.getElementById("name").value;    // INPUT DU DOCUMENT
+	var prixItem = document.getElementById("number").value;
+  prixItem=parseFloat(prixItem)
+ 
+    
+     if (prixItem >= 10.00) { // Ceci détermine si le cout de livraison sera de 3 ou 2 dollars
+      total = prixItem ; // nous voulons gardez valeur de prixItem donc total rentre en jeux
+      prixLivraison = parseFloat(3.00); // nous voulons gardez le prix de la livraison pour plus tard, alors nous attribuons valeur
+      total = (total+prixLivraison)*taxes;
+      total = total.toFixed(2);
+  } else {
+      total = prixItem;
+      prixLivraison = parseFloat(2.00);
+      total = (total+prixLivraison)*taxes;
+      total = total.toFixed(2);
+  }
+    
+    
+    document.getElementById("sus").innerHTML = " REÇU DE COMMANDE " 
+    document.getElementById("sus2").innerHTML =  "     " + whatItem + ":  " + Math.round(prixItem * 100) / 100 
+    document.getElementById("sus3").innerHTML = "      LIVRAISON:        " + Math.round(prixLivraison * 100) / 100 + ".00"
+    document.getElementById("sus4").innerHTML =   "      SOUS-TOTAL:       " + Math.round((prixLivraison+prixItem) * 100) / 100
+    document.getElementById("sus5").innerHTML = "      TAXES:            " + Math.round(((  total-(  prixLivraison+prixItem  )  )) * 100) / 100
+    document.getElementById("sus6").innerHTML = "      TOTAL:            " + total+"$"
+
+    
+    }
+    </script>
+  </body>
+</html>
