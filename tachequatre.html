@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+       <title>MAD LIBS!!!!</title>
+   </head>
+   <!-- Arrière Plan -->
+   <body style="background-color:lightblue;">
+
+      <center> <h1 style="color:purple;"><strong>MAD LIBS...</strong></h1> </center>
+     
+      <!--Liens-->
+       <h3> Mots à entrer :  </h3>
+        <label for = word1>Un nom au pluriel:</label>    <br>
+        <input id = word1 type = text> <br>
+        <label for = word2>Une verbe pps au présent indicatif:</label>    <br>
+        <input id = word2 type = text><br>
+            <label for = word3>Un nom propre d'un homme:</label>    <br>
+        <input id = word3 type = text><br>
+            <label for = word4>Un adjectif:</label>    <br>
+        <input id = word4 type = text><br>
+            <label for = word5>Un adjectif:</label>    <br>
+        <input id = word5 type = text><br>
+            <label for = word6>Un métier:</label>    <br>
+        <input id = word6 type = text><br>
+            <label for = word7>Un adjectif:</label>    <br>
+        <input id = word7 type = text><br><br>
+        
+        <input id=sus type = button onclick=madlibs() value=soumettre />
+        
+    <p id=answer></p>
+    
+    <script>
+    function madlibs() {
+    
+    var mot1 = document.getElementById("word1").value
+     var mot2 = document.getElementById("word2").value
+      var mot3 = document.getElementById("word3").value
+       var mot4 = document.getElementById("word4").value
+        var mot5 = document.getElementById("word5").value
+         var mot6 = document.getElementById("word6").value
+          var mot7 = document.getElementById("word7").value
+
+    document.getElementById("answer").innerHTML = " À mon école, j'adore les "+ mot1.bold()  +"! Je m'amuse parfois et je "+mot2.bold()+" ces " +mot1.bold()+ " Et bien, Mon ami "+mot3.bold()+" qui est très "+mot4.bold()+" me dit souvent que je suis "+mot5.bold()+"... Par contre, comme "+mot6.bold()+" au futur ces commentaires me paraissent très" + mot7.bold()
+    
+    }
+    </script>
+   </body>
+   
+   <!-- À mon école, j'adore les XXX! Je m'amuse parfois et je XXX ces XXX Et bien, Mon ami XXX qui est très XXX me dit souvent que je suis XXX... Par contre, comme XXX au futur ces commentaires me paraissent très  -->
+   
+</html>
