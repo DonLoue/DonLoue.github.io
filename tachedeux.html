@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- 3 Sortes inputs de text dans des boites, ils sont attribués des labels pour l'useur -->
+<h2>FORM. INSCRIPTION</h2>
+      <label for="premier">premier nom</label>
+    <input type="text" id="premier" /> <br>
+      
+      <label for="deuxieme">milieu nom</label>
+	  <input type="text" id="deuxieme" /> <br>
+      
+      <label for="troisieme"> dernier nom </label>
+      <input type="text" id="troisieme" />
+      
+      <br /><br />
+      <!-- 3 Sortes inputs de button, chacun affiche output différent puisqu'ils possèdent des fonctions différentes-->
+  <input
+        type="button"
+        id="btnSoumet"
+        onclick="submit()"
+        value="INITIALES"
+      />
+        <input
+        type="button"
+        id="btnSoumet2"
+        onclick="submit2()"
+        value="NOM AU COMPLET"
+      />
+       <input
+        type="button"
+        id="btnSoumet3"
+        onclick="submit3()"
+        value="USERNAME"
+      />
+      
+      
+<p id="demo"></p>   <!-- Zone de paragraphe pour mettre l'output avec un ID -->
+
+<script>
+
+function submit() {
+var nom = document.getElementById("premier").value;
+ var milieu = document.getElementById("deuxieme").value;
+ var dernier = document.getElementById("troisieme").value;
+ 
+var INI1 = nom.charAt(0); // variable identifié comme première lettre (0)
+var INI2 = "" + milieu.charAt(0);
+var INI3 = "" + dernier.charAt(0);
+ 
+ 
+    // ceci appelle le ID du zone de texte et le modifie pour afficher les résultats
+document.getElementById("demo").innerHTML = INI1.toUpperCase() + "." + INI2.toUpperCase() + "." + INI3.toUpperCase()
+
+}
+
+function submit2() {
+
+var nom = document.getElementById("premier").value;
+ var milieu = document.getElementById("deuxieme").value;
+ var dernier = document.getElementById("troisieme").value;
+ 
+ 
+document.getElementById("demo").innerHTML = nom.charAt(0).toUpperCase() + nom.slice(1) + " " + milieu.charAt(0).toUpperCase() + milieu.slice(1) + " " + dernier.charAt(0).toUpperCase() + dernier.slice(1)
+
+
+}
+
+function submit3() {
+var nom = document.getElementById("premier").value;
+ var milieu = document.getElementById("deuxieme").value;
+var INI1 = nom.charAt(0);
+var INI2 = milieu.charAt(0);
+ var dernier = document.getElementById("troisieme").value;
+ 
+ 
+document.getElementById("demo").innerHTML = INI1.toLowerCase()+INI2.toLowerCase()+dernier.toLowerCase()
+
+
+}
+</script>
+
+</body>
+</html> 
